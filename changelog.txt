@@ -1,0 +1,4 @@
+*** Buy on Google for WooCommerce ***
+
+2023-06-29 - version 0.9.9
+ * Initial Release
