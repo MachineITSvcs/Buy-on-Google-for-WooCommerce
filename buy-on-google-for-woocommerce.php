@@ -189,7 +189,7 @@ add_action('admin_init', function() {
 	add_action('admin_enqueue_scripts', function( $hook ) use( $plugin_data ) {
 		$edit_order = false;
 		$hpos_enabled = ( class_exists(\Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController::class) && wc_get_container()->get(\Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController::class)->custom_orders_table_usage_is_enabled() );
-		if (( $hpos_enabled && wc_get_container()->get(\Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController::class)->custom_orders_table_usage_is_enabled() ? wc_get_page_screen_id('shop-order') === $hook && !empty($_GET['id']) : ( 'post.php' === $hook && !empty($_GET['post']) ) )) {
+		if (( $hpos_enabled && wc_get_container()->get(\Automattic\WooCommerce\Internal\DataStores\Orders\CustomOrdersTableController::class)->custom_orders_table_usage_is_enabled() ? ( wc_get_page_screen_id('shop-order') === $hook && !empty($_GET['id']) ) : ( 'post.php' === $hook && !empty($_GET['post']) ) )) {
 			$post_id = ( $hpos_enabled ? intval($_GET['id']) : intval($_GET['post']) );
 			if ($post_id > 1 && 'shop_order' === ( $hpos_enabled && method_exists(\Automattic\WooCommerce\Utilities\OrderUtil::class, 'get_order_type') ? \Automattic\WooCommerce\Utilities\OrderUtil::get_order_type($post_id) : get_post_type($post_id) )) {
 				$order = wc_get_order($post_id);
@@ -200,7 +200,7 @@ add_action('admin_init', function() {
 		}
 		$users = get_option(mproseo_bogfw_get_accounts_option_name(), array());
 		$admin_notice = ( ( empty($users) || empty(array_filter(array_column($users, 'refresh_token'))) ) && empty(get_option(mproseo_bogfw_get_dismissed_notice_option_name())) );
-		if ($edit_order || $admin_notice || $app_settings) {
+		if ($edit_order || $admin_notice) {
 			$version = ( !empty($plugin_data['Version']) ? $plugin_data['Version'] : null );
 			wp_enqueue_script('jquery');
 			if ($edit_order) {
@@ -2288,7 +2288,7 @@ add_action('init', function() {
 				if (!empty($statuses)) {
 					global $thepostid, $post;
 					$hpos_enabled = ( class_exists(\Automattic\WooCommerce\Utilities\OrderUtil::class) && method_exists(\Automattic\WooCommerce\Utilities\OrderUtil::class, 'custom_orders_table_usage_is_enabled') && \Automattic\WooCommerce\Utilities\OrderUtil::custom_orders_table_usage_is_enabled() );
-					$post_id = intval($hpos_enabled && !empty($_GET['id']) ? intval($_GET['id']) : ( empty($thepostid) ? ( !empty($post) ? $post->ID : ( !empty($_GET['post']) ? intval($_GET['post']) : 0 ) ) : $thepostid ));
+					$post_id = ( $hpos_enabled && !empty($_GET['id']) ? intval($_GET['id']) : ( empty($thepostid) ? ( !empty($post) ? $post->ID : ( !empty($_GET['post']) ? intval($_GET['post']) : 0 ) ) : $thepostid ) );
 					if (0 === $post_id && !empty($_GET['rest_route'])) {
 						$rest_route = explode('/', sanitize_text_field($_GET['rest_route']));
 						$orders_key = array_search('orders', $rest_route);
