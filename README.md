@@ -1,4 +1,4 @@
-# <a href="https://github.com/MachineITSvcs/Buy-on-Google-for-WooCommerce" target="_blank">Buy-on-Google-for-WooCommerce</a>
+# <a href="https://github.com/MachineITSvcs/Buy-on-Google-for-WooCommerce" target="_blank">Buy on Google for WooCommerce</a>
 
 ## Description
 
