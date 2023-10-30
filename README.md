@@ -1,4 +1,4 @@
-# <a href="https://github.com/MachineITSvcs/buy-on-google-for-woocommerce" target="_blank">Buy on Google for WooCommerce</a>
+# <a href="https://github.com/MachineITSvcs/Buy-on-Google-for-WooCommerce" target="_blank">Buy on Google for WooCommerce</a>
 
 ## Description
 
@@ -28,4 +28,4 @@ For assistance with the use or operation of this utility, feel free to <a href="
 
 ## Changelog
 
--- <a href="https://github.com/MachineITSvcs/buy-on-google-for-woocommerce/releases/tag/v0.9.9" target="_blank">0.9.9</a> - Initial Release
+-- <a href="https://github.com/MachineITSvcs/Buy-on-Google-for-WooCommerce/releases/tag/v0.9.9" target="_blank">0.9.9</a> - Initial Release
