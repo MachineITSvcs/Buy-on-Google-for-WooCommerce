@@ -10,7 +10,9 @@ This allows for consolidated order and inventory management if selling on both G
 
 Initially, this was intended to be a premium/paid plugin, but Google just announced today, June 29, 2023, that they will be shutting down the Buy on Google program on September 26, 2023, and I did not want all the hard work that went into this plugin to go to waste.
 
-So hopefully this plugin passes the initial review quickly so that merchants can take advantage of this plugin before the Buy on Google program is shut down. UPDATE: Unfortunately, WordPress Plugin Support did not review finish reviewing the plugin until after the Buy on Google program was shut down.
+So hopefully this plugin passes the initial review quickly so that merchants can take advantage of this plugin before the Buy on Google program is shut down.
+
+<strong>UPDATE: Unfortunately, WordPress Plugin Support did not finish reviewing the plugin until after the Buy on Google program was shut down. This repository will remain for reference.</strong>
 
 == This plugin is fully compatible with WordPress Multisite installations, as well as subdirectory installations! Best of all, IT DOES NOT REQUIRE ANY CODING KNOWLEDGE! ==
 
