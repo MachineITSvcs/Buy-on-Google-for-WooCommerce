@@ -26,7 +26,7 @@ So hopefully this plugin passes the initial review quickly so that merchants can
 
 ## Contact
 
-For assistance with the use or operation of this utility, feel free to <a href="mailto:support@machineitservices.com">email me</a>. Please no spam or solicitation.
+For assistance with the use or operation of this plugin, feel free to <a href="mailto:support@machineitservices.com">email me</a>. Please no spam or solicitation.
 
 ## Changelog
 
