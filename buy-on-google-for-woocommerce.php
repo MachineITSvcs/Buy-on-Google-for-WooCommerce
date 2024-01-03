@@ -1832,10 +1832,6 @@ add_action('init', function() {
 
 		if (!function_exists('mproseo_bogfw_update_woo_order')) {
 			function mproseo_bogfw_update_woo_order( $google_order, $woo_order, $sandbox_mode = null, $update_items = true ) {
-				/*$refund = wc_get_order(44);
-				if (false !== $refund) {
-					$refund->delete(true);
-				}*/
 				if (empty($google_order) || false === $woo_order) {
 					return;
 				}
