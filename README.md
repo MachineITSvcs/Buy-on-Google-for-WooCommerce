@@ -12,7 +12,7 @@ Initially, this was intended to be a premium/paid plugin, but Google just announ
 
 So hopefully this plugin passes the initial review quickly so that merchants can take advantage of this plugin before the Buy on Google program is shut down.
 
-<strong>UPDATE: Unfortunately, WordPress Plugin Support did not finish reviewing the plugin until after the Buy on Google program was shut down. This repository will remain for reference.</strong>
+<strong>UPDATE: Unfortunately, WordPress Plugin Support did not finish reviewing the plugin until after the Buy on Google program was shut down. This repository will remain for reference, but the plugin should not be considered functional, as I have disabled unlicensed access to the Google application.</strong>
 
 == This plugin is fully compatible with WordPress Multisite installations, as well as subdirectory installations! Best of all, IT DOES NOT REQUIRE ANY CODING KNOWLEDGE! ==
 
