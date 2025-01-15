@@ -51,36 +51,38 @@ if (!function_exists('mproseo_bogfw_get_dismissed_notice_option_name')) {
 	}
 }
 
-function mproseo_bogfw_is_plugin_active( $plugins ) {
-	if (empty($plugins)) {
-		return false;
-	}
-	$plugins = (array) $plugins;
-	if (function_exists('is_plugin_active')) {
-		foreach ($plugins as $plugin) {
-			if (!is_plugin_active($plugin)) {
-				return false;
-			}
-		}
-	} else {
-		$active_plugins = (array) get_option('active_plugins', array());
-		if (function_exists('is_multisite') && is_multisite()) {
-			$active_plugins = array_merge($active_plugins, array_keys((array) get_site_option('active_sitewide_plugins', array())));
-		}
-		if (function_exists('apply_filters')) {
-			$active_plugins = apply_filters('active_plugins', $active_plugins);
-		}
-		if (empty($active_plugins)) {
+if (!function_exists('mproseo_bogfw_is_plugin_active')) {
+	function mproseo_bogfw_is_plugin_active( $plugins ) {
+		if (empty($plugins)) {
 			return false;
-		} else {
+		}
+		$plugins = (array) $plugins;
+		if (function_exists('is_plugin_active')) {
 			foreach ($plugins as $plugin) {
-				if (!in_array($plugin, $active_plugins)) {
+				if (!is_plugin_active($plugin)) {
 					return false;
 				}
 			}
+		} else {
+			$active_plugins = (array) get_option('active_plugins', array());
+			if (function_exists('is_multisite') && is_multisite()) {
+				$active_plugins = array_merge($active_plugins, array_keys((array) get_site_option('active_sitewide_plugins', array())));
+			}
+			if (function_exists('apply_filters')) {
+				$active_plugins = apply_filters('active_plugins', $active_plugins);
+			}
+			if (empty($active_plugins)) {
+				return false;
+			} else {
+				foreach ($plugins as $plugin) {
+					if (!in_array($plugin, $active_plugins)) {
+						return false;
+					}
+				}
+			}
 		}
+		return true;
 	}
-	return true;
 }
 
 if (!function_exists('mproseo_bogfw_schedule_cron_sync')) {
